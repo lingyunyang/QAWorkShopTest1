@@ -57,7 +57,7 @@ test {
 //    }
 //}
 
-check.dependsOn integTest
+//check.dependsOn integTest
 
 repositories {
     jcenter()
