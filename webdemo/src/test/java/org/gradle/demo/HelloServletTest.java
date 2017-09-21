@@ -36,16 +36,16 @@ public class HelloServletTest {
 //        assertEquals("Hello, World!", stringWriter.toString());
 //    }
 //
-//    @Test
-//    public void doPostWithoutName() throws Exception {
-//        when(request.getRequestDispatcher("response.jsp"))
-//                .thenReturn(requestDispatcher);
-//
-//        new HelloServlet().doPost(request, response);
-//
-//        verify(request).setAttribute("user", "World");
-//        verify(requestDispatcher).forward(request,response);
-//    }
+    @Test
+    public void doPostWithoutName() throws Exception {
+        when(request.getRequestDispatcher("response.jsp"))
+                .thenReturn(requestDispatcher);
+
+        new HelloServlet().doPost(request, response);
+
+        verify(request).setAttribute("user", "World");
+        verify(requestDispatcher).forward(request,response);
+    }
 
 //    @Test
 //    public void doPostWithName() throws Exception {
