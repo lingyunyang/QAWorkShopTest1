@@ -44,34 +44,6 @@ pipeline {
 
        }
         
-        stage('Deploy') {
-          //  when {
-             //   expression {
-                    /*如果测试失败，状态为UNSTABLE*/
-               //     currentBuild.result == 'SUCCESS'
-            //   }
-         //   }
-            steps {
-                echo 'Deploying..'
-         
-                //sh 'ssh -tt hbao@10.209.21.215 < deploy.sh'
-                
-                sh """
-                set -e
-                ssh hbao@10.209.21.215 'bash -s' < checktomcatstatus.sh
-
-                
-                cd /var/jenkins_home/workspace/TestForPipeline/webdemo/build/libs
-                
-                scp webdemo.war hbao@10.209.21.215:/Users/hbao/Downloads/apache-tomcat-7.0.82/webapps
-                ssh hbao@10.209.21.215 '
-                cd /Users/hbao/Downloads/apache-tomcat-7.0.82/bin
-                ./startup.sh
-                '
-                """
-                
-            }
-        }
 
             }
         }
